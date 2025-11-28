@@ -1,15 +1,17 @@
 @startuml
 'https://plantuml.com/sequence-diagram
 
+actor Aさん
+participant MagicOnion
+actor Bさん
+actor Cさん
+
 autonumber
+Aさん->MagicOnion:切断
+MagicOnion->Bさん:退室者(A)
 
-== Initialization ==
+Bさん->MagicOnion:切断
+MagicOnion->Cさん:退室者(A,B)
 
-Alice -> Bob: Authentication Request
-Bob --> Alice: Authentication Response
-
-== Repetition ==
-
-Alice -> Bob: Another authentication Request
-Alice <-- Bob: another authentication Response
+Cさん->MagicOnion:切断
 @enduml

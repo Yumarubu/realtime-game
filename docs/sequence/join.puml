@@ -1,15 +1,22 @@
 @startuml
-'https://plantuml.com/sequence-diagram
+
+actor Aさん
+participant MagicOnion
+actor Bさん
+actor Cさん
 
 autonumber
 
-== Initialization ==
+Aさん -> MagicOnion:接続(A)
+Aさん <- MagicOnion:参加者(A)
 
-Alice -> Bob: Authentication Request
-Bob --> Alice: Authentication Response
+MagicOnion <- Bさん:接続(B)
+MagicOnion -> Bさん:参加者(A,B)
+MagicOnion -> Aさん:通知(B)
 
-== Repetition ==
+MagicOnion <- Cさん:接続(C)
+MagicOnion -> Cさん:参加者(A,B,C)
+MagicOnion -> Aさん:通知(C)
+MagicOnion -> Bさん:通知(C)
 
-Alice -> Bob: Another authentication Request
-Alice <-- Bob: another authentication Response
 @enduml
