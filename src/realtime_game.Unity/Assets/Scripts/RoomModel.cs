@@ -67,6 +67,4 @@ public class RoomModel: BaseModel, IRoomHubReceiver
     {
         return Task.FromResult<Guid>(this.ConnectionId);
     }
-
-
 }
