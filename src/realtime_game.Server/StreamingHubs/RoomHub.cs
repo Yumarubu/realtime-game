@@ -66,5 +66,14 @@ namespace realtime_game.Server.StreamingHubs
         {
             return Task.FromResult<Guid>(this.ConnectionId);
         }
+
+        public Task LeaveAsync()
+        {
+            //退室したことを全メンバーに通知
+            this.roomContext.Group.All.OnLeave(this.ConnectionId);
+
+            //ルーム内のメンバーから自分を削除
+            this.roomContext.Group.Remove(this.ConnectionId);
+        }
     }
 }
