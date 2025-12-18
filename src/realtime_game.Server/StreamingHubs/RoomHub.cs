@@ -74,6 +74,15 @@ namespace realtime_game.Server.StreamingHubs
 
             //ルーム内のメンバーから自分を削除
             this.roomContext.Group.Remove(this.ConnectionId);
+
+            //ルームデータから退室したユーザーを削除
+            this.roomContext.RoomUserDataList.Remove(this.ConnectionId);
+            
+            if( <= 0)   //もし、ルーム内にユーザーが一人もいないなら
+            {
+                roomContextRepos.RemoveContext(roomName);
+            }
+            return Task.CompletedTask;
         }
     }
 }
