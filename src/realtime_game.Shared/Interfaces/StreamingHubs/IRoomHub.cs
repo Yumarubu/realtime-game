@@ -18,7 +18,6 @@ namespace realtime_game.Shared.Interfaces.StreamingHubs
 
         // ユーザー入室
         Task<JoinedUser[]> JoinAsync(string roomName, int userId);
-        Task<Guid> GetConnectionId();
 
         //ユーザー退室
         Task LeaveAsync();

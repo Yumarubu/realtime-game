@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TitleSceneManager : MonoBehaviour
 {
@@ -12,5 +13,10 @@ public class TitleSceneManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void ChangeGameScene()
+    {
+        SceneManager.LoadScene("GameScene");
     }
 }

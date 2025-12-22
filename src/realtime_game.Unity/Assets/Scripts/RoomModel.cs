@@ -67,4 +67,19 @@ public class RoomModel: BaseModel, IRoomHubReceiver
     {
         return Task.FromResult<Guid>(this.ConnectionId);
     }
+
+    // ユーザー切断通知
+    public Action<Guid> OnLeftUser { get; set; }
+
+    // ユーザー切断通知
+    public Action OnLeftUserAll { get; set; }
+
+    // 退室通知（IRoomHubReceiverインターフェースの実装）
+    public void OnLeave(Guid connectionId)
+    {
+        if(OnLeftUser != null)
+        {
+            OnLeftUser(connectionId);
+        }
+    }
 }
