@@ -71,4 +71,5 @@ public class GameDirector : MonoBehaviour
             //ˆêl•ª‚Ì‘Şºˆ—
             OnLeftUserAll(connectionId);
         }
+    }
 }
