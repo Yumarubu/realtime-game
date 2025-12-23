@@ -74,6 +74,16 @@ public class RoomModel: BaseModel, IRoomHubReceiver
     // ユーザー切断通知
     public Action OnLeftUserAll { get; set; }
 
+    // 退室
+    public async UniTask LeaveAsync()
+    {
+        await roomHub.LeaveAsync();
+        Debug.Log("退室完了");
+
+        // 自分以外のオブジェクトを削除する
+
+    }
+
     // 退室通知（IRoomHubReceiverインターフェースの実装）
     public void OnLeave(Guid connectionId)
     {
