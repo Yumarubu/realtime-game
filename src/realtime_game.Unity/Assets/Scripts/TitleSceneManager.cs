@@ -19,4 +19,9 @@ public class TitleSceneManager : MonoBehaviour
     {
         SceneManager.LoadScene("GameScene");
     }
+
+    public void ChangeGameSelectScene()
+    {
+        SceneManager.LoadScene("StageSelectScene");
+    }
 }

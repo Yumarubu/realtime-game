@@ -28,7 +28,7 @@ public class GameDirector : MonoBehaviour
         try
         {
             // ƒ†[ƒU[î•ñ‚ğæ“¾
-            myself = await userModel.GetUser(userId);
+            //myself = await userModel.GetUser(userId);
         }
         catch (Exception e)
         {
